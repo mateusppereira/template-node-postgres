@@ -16,8 +16,9 @@ app.get('/get/:id', async (req, res) => {
 })
 
 app.get('/run-migrations', async (req, res) => {
-  Object.keys(migrations).forEach(table => {
-    db.query(migrations[table][0]);
+  Object.keys(migrations).forEach(async table => {
+    await db.query(migrations[table][0]);
+    await db.query(migrations[table][1]);
   });
   return
 })
