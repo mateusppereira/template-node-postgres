@@ -27,4 +27,4 @@ app.get('/run-migrations', async (req, res) => {
   return
 })
 
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
