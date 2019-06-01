@@ -5,6 +5,7 @@ const TABLES = {
 
 const migrations = {
   users: [
+    `DROP TABLE IF EXISTS users CASCADE;`,
     `CREATE TABLE users (
       id_user SERIAL PRIMARY KEY,
       name VARCHAR(250) NOT NULL,
