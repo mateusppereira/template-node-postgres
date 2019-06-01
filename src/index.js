@@ -10,6 +10,10 @@ const db = require('./db');
 const { doInsert } = require('./db/query');
 const { TABLES, migrations } = require('./db/migration');
 
+app.get('/', (req, res) => {
+  return res.send('hello world');
+})
+
 app.get('/get/:id', async (req, res) => {
   const result = await db.query('SELECT * FROM teste WHERE id = $1', [req.params.id]);
   return res.json(result.rows);
