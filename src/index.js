@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/get/:id', async (req, res) => {
-  const result = await db.query('SELECT * FROM users WHERE id = $1', [req.params.id]);
+  const result = await db.query('SELECT * FROM users WHERE id_user = $1', [req.params.id]);
   return res.json(result.rows);
 })
 
